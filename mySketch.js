@@ -44,8 +44,10 @@ function draw() {
   // Add trail puff
   trail.push({ x: pelicanX, y: pelicanY + 35, alpha: 255 });
 
-  // Reverse direction at edges
-  if (pelicanX > width + 100 || pelicanX < -100) {
+  // Reverse direction at middle section edges
+  let leftBound = width * 0.25;
+  let rightBound = width * 0.75;
+  if (pelicanX > rightBound || pelicanX < leftBound) {
     direction *= -1;
   }
 
